@@ -22,7 +22,8 @@ app.use(cors({
   origin: [
     "http://localhost:5174",
     "http://localhost:5175",
-    "https://zerodha-frontend-gzrt.onrender.com"
+    "https://zerodha-frontend-gzrt.onrender.com",
+    "https://zerodha-dashboard-86nk.onrender.com"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
