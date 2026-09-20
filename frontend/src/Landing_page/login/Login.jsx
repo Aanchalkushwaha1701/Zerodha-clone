@@ -31,7 +31,7 @@ function Login() {
         alert("Login successful!");
 
         // Dashboard par redirect
-        window.location.href = "http://localhost:5175/";
+        window.location.href = "https://zerodha-dashboard-86nk.onrender.com";
       }
     } catch (error) {
       console.log(error);

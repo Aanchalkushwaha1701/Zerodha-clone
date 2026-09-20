@@ -20,7 +20,7 @@ function Signup() {
 
   try {
     const response = await axios.post(
-      "http://localhost:8080/signup",
+      "https://zerodha-backend-tlp2.onrender.com/signup",
       formData,
       {
         withCredentials: true,
@@ -31,7 +31,7 @@ function Signup() {
 
     if (response.data.success) {
       alert("Signup successful!");
-         window.location.href = "http://localhost:5175/";
+         window.location.href = "https://zerodha-dashboard-86nk.onrender.com";
     } else {
       alert(response.data.message);
     }
