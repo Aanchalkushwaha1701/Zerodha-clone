@@ -13,15 +13,25 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice,setStockPrice]=useState(0.0);
 
  
-const handleBuyClick=()=>{
-  axios.post("https://zerodha-backend-tlp2.onrender.com/neworder",{
-    name:uid,
-    qty:stockQuantity,
-    price:stockPrice,
-    mode:"BUY"
-  })
-  GeneralContext.closeBuyWindow();
-}
+const handleBuyClick = async () => {
+  try {
+    await axios.post(
+      "https://zerodha-backend-tlp2.onrender.com/neworder",
+      {
+        name: uid,
+        qty: stockQuantity,
+        price: stockPrice,
+        mode: "BUY"
+      }
+    );
+
+    GeneralContext.closeBuyWindow();
+  } catch (error) {
+    console.error("Buy order failed:", error);
+  }
+};
+  
+
    
   const handleCancelClick = () => {
     GeneralContext.closeBuyWindow();
@@ -60,12 +70,12 @@ const handleBuyClick=()=>{
       <div className="buttons">
         <span>Margin required ₹140.65</span>
         <div>
-           <Link className="btn btn-blue" onClick={handleBuyClick}>
+            <button type="button" className="btn btn-blue" onClick={handleBuyClick}>
             Buy
-          </Link> 
-          <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+          </button> 
+          <button type="button" className="btn btn-grey" onClick={handleCancelClick}>
             Cancel
-          </Link>
+          </button>
         </div>
       </div>
     </div>
