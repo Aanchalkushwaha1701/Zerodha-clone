@@ -8,7 +8,7 @@ import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
 
 const BuyActionWindow = ({ uid }) => {
- 
+ const generalContext = useContext(GeneralContext);
   const [stockQuantity,setStockQuantity]=useState(1);
   const [stockPrice,setStockPrice]=useState(0.0);
 
@@ -25,7 +25,7 @@ const handleBuyClick = async () => {
       }
     );
 
-    GeneralContext.closeBuyWindow();
+   generalContext.closeBuyWindow();
   } catch (error) {
     console.error("Buy order failed:", error);
   }
@@ -34,7 +34,7 @@ const handleBuyClick = async () => {
 
    
   const handleCancelClick = () => {
-    GeneralContext.closeBuyWindow();
+    generalContext.closeBuyWindow();
   };
 
   return (
