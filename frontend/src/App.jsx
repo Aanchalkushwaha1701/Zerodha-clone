@@ -8,7 +8,7 @@ import SupportPage from "./Landing_page/support/SupportPage";
 import AboutPage from "./Landing_page/about/AboutPage";
 import NavBar from "./Landing_page/Navbar";
 import Footer from "./Landing_page/Footer";
-import NotFound from "./Landing_page/Notfound";
+import NotFound from "./Landing_page/NotFound";
 import Login from "./Landing_page/login/Login";
 
 function App() {
