@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
 
  
 const handleBuyClick=()=>{
-  axios.post("http://localhost:8080/neworder",{
+  axios.post("https://zerodha-backend-tlp2.onrender.com/neworder",{
     name:uid,
     qty:stockQuantity,
     price:stockPrice,
